@@ -10,6 +10,7 @@ class Character(Model):
    #TODO: Should be int, but not going to parse it out right now
    manga_first_appearance = Field('text', validation={'allow':'blank'})
    anime_first_appearance = Field('text', validation={'allow':'blank'})
+   other_first_appearance = Field('text', validation={'allow':'blank'})
    
    gender = Field('text', validation={'allow':'blank'})
    keyhole = Field('int', validation={'allow':'blank'})
