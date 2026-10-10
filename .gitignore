@@ -1,6 +1,2 @@
-__pycache__/*
-
-dcapi/logs/*
-dcapi/keys.py
-dcapi/__pycache__/*
+__pycache__/
 dcapi/databases/*

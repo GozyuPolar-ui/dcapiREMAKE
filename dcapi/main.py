@@ -6,6 +6,11 @@ from fastapi import FastAPI, HTTPException, Query
 
 from . import database
 
+from pathlib import Path
+
+from fastapi.responses import FileResponse
+
+STATIC = Path(__file__).parent / "static"
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -28,9 +33,9 @@ def to_dict(row):
     return character
 
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def root():
-    return {"message": "真実はいつもひとつ！", "docs": "/docs"}
+    return FileResponse(STATIC / "index.html")
 
 
 @app.get("/v0/characters")
@@ -75,6 +80,83 @@ def get_character_by_id(character_id: int):
     if row is None:
         raise HTTPException(404, f"Karakter dengan id {character_id} tidak ditemukan")
     return to_dict(row)
+
+
+def case_with_characters(conn, row):
+    links = conn.execute(
+        """SELECT c.id, c.romanized_name, cc.role
+           FROM case_characters cc JOIN characters c ON c.id = cc.character_id
+           WHERE cc.case_id = ? ORDER BY cc.role, c.id""",
+        (row["id"],),
+    ).fetchall()
+    extras = json.loads(row["data"]) if row["data"] else {}
+    return {
+        "id": row["id"],
+        "title": row["title"],
+        "anime_episode": row["anime_episode"],
+        "manga_file": row["manga_file"],
+        "summary": row["summary"],
+        **extras,
+        "characters": [
+            {"id": l["id"], "name": l["romanized_name"], "role": l["role"]}
+            for l in links
+        ],
+    }
+
+
+@app.get("/v0/cases")
+def list_cases(
+    q: Optional[str] = Query(None, description="Cari judul kasus"),
+    character_id: Optional[int] = Query(None, description="Hanya kasus karakter ini"),
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+):
+    where, params = [], []
+    if q:
+        where.append("search_text LIKE ?")
+        params.append(f"%{q.strip().lower()}%")
+    if character_id is not None:
+        where.append(
+            "id IN (SELECT case_id FROM case_characters WHERE character_id = ?)"
+        )
+        params.append(character_id)
+    clause = f"WHERE {' AND '.join(where)}" if where else ""
+
+    with database.connect() as conn:
+        total = conn.execute(
+            f"SELECT COUNT(*) FROM cases {clause}", params
+        ).fetchone()[0]
+        rows = conn.execute(
+            f"SELECT * FROM cases {clause} ORDER BY id LIMIT ? OFFSET ?",
+            [*params, limit, offset],
+        ).fetchall()
+        results = [case_with_characters(conn, r) for r in rows]
+
+    return {"total": total, "limit": limit, "offset": offset, "results": results}
+
+
+@app.get("/v0/case/{case_id}")
+def get_case(case_id: int):
+    with database.connect() as conn:
+        row = conn.execute("SELECT * FROM cases WHERE id = ?", (case_id,)).fetchone()
+        if row is None:
+            raise HTTPException(404, f"Kasus dengan id {case_id} tidak ditemukan")
+        return case_with_characters(conn, row)
+
+
+@app.get("/v0/character/{character_id:int}/cases")
+def get_character_cases(
+    character_id: int,
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+):
+    with database.connect() as conn:
+        exists = conn.execute(
+            "SELECT 1 FROM characters WHERE id = ?", (character_id,)
+        ).fetchone()
+    if exists is None:
+        raise HTTPException(404, f"Karakter dengan id {character_id} tidak ditemukan")
+    return list_cases(q=None, character_id=character_id, limit=limit, offset=offset)
 
 
 @app.get("/v0/character/{name}")

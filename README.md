@@ -1,45 +1,132 @@
 # Detective Conan API
 
-Hello Detectives! This API will allow you to search raw data about *Detective
-Conan* characters and cases, derived from the Detective Conan World wiki.
-Why? Because nothing has existed like this before
-and Detective Conan is an institution.
+Hello Detectives! This API lets you search raw data about *Detective Conan*
+characters and cases, derived from the [Detective Conan World](http://www.detectiveconanworld.com)
+wiki.
 
-The data is stored in JSON files that are loaded into a database on the server,
-accessible via a Weppy REST API, which you can self-host if you accept CoAi as 
-your One True Pairing. Right now, that database is SQLite, but it will be 
-changed to PostgreSQL when it would make sense to do so. Eventually, I'll set
-up a demonstration box and write a Python wrapper for this API, but this project
-is in early stages.
+This is a fork of [lethargilistic/dcapi](https://github.com/lethargilistic/dcapi),
+rewritten on **FastAPI + SQLite** (the original used Weppy, which is no longer
+maintained). The data is stored in JSON files that are loaded into a SQLite
+database on first run.
 
 ## Setup
-1. Clone this repository. `git clone https://github.com/lethargilistic/dcapi.git`
 
-2. Install Weppy. `pip install weppy`
+1. Clone this repository.
+```
+   git clone https://github.com/GozyuPolar-ui/dcapiREMAKE.git
+   cd dcapiREMAKE
+```
 
-3. Create `keys.py` and define `DB_PIPE_KEY` as a `str` for use as your database key.
+2. Install the dependencies.
+```
+   pip install -r requirements.txt
+```
 
-4. Initialize the database. `weppy -a dcapi setup`
+3. Run the server. The database is created automatically on the first run.
+```
+   python run.py
+```
 
-5. Run the Weppy development server. `weppy -a dcapi run`
+4. Open `http://127.0.0.1:8000/docs` for interactive documentation, or call the
+   endpoints below directly.
 
-6. Make the API calls. Weppy defaults to `127.0.0.1:8000`.
+To rebuild the database after changing the JSON files, delete
+`dcapi/databases/dcapi.db` and run `python -m dcapi.database`.
 
-## Example Usage
-Here is an example GET request for data on a character:
+## Endpoints
 
-`GET [api_url]/v0/character/[character_id]`
+| Endpoint | Description |
+|---|---|
+| `GET /v0/characters` | List characters. Query: `q` (search names and aliases), `gender` (`Male`, `Female`, `Unknown`), `limit` (1-100, default 20), `offset` |
+| `GET /v0/character/{id}` | One character by id. `404` if not found |
+| `GET /v0/character/{name}` | One character by exact name (case-insensitive): romanized, kanji, or English anime/manga name. `404` if not found |
+| `GET /v0/character/{id}/cases` | Cases a character appears in. Supports `limit` and `offset` |
+| `GET /v0/cases` | List cases. Query: `q` (search title), `character_id`, `limit`, `offset` |
+| `GET /v0/case/{id}` | One case with its characters and roles. `404` if not found |
 
-You can also search a character by name, whether that's their name in Japanese or romanji, or their name from the Funimation English dub and manga.
+List endpoints return `{"total": ..., "limit": ..., "offset": ..., "results": [...]}`.
 
-`GET [api_url]/v0/character/Ai Haibara`
+### Examples
 
-## Planned Topics
-* Character data (characters major enough to have their own page on Detective Conan World only)
-* Case data (manga and anime only)
-* Crossreferencing characters in cases (See the cases where Conan and Ai both appear)
+```
+GET /v0/character/Ai Haibara
+GET /v0/characters?q=sherry
+GET /v0/characters?gender=Female&limit=10&offset=10
+GET /v0/cases?q=roller
+GET /v0/cases?character_id=19
+```
 
-## Other TODO
-* Migrate from SQLite to PostgreSQL.
-* Create a command to set the database key? 770?
-* Use search library for text search. Whoosh?
+Example character response (trimmed):
+
+```json
+{
+  "id": 28,
+  "name": {
+    "japanese": {"romanized": "Ai Haibara", "kanji": "灰原 哀"},
+    "english": {"anime": "...", "manga": "..."}
+  },
+  "age": 18,
+  "gender": "Female",
+  "aliases": ["Shiho Miyano (real name)", "Sherry"],
+  "occupation": ["Teitan Elementary School student", "Detective Boys member"],
+  "voice": {"japanese": ["Megumi Hayashibara"], "english": ["Brina Palencia"]},
+  "first_appearance": {"manga": "...", "anime": null, "other": null},
+  "keyhole": 18
+}
+```
+
+Fields that hold several values (`aliases`, `occupation`, `date_of_birth`,
+`drama_actor`, `voice.*`) are always lists or `null`. Missing data is `null`,
+never an empty string.
+
+Each case is one anime episode. It includes the title, Japanese title, episode
+number, manga file, air date, the crimes in the episode (type, location, victim,
+cause of death, suspects, description), and the characters linked to it with a
+role (`appearance`, `detective`, or `victim`). The culprit is not available
+because the wiki does not list it in a structured field.
+
+## Updating the data
+
+The scrapers live in `dcapi/data/json/` and write the JSON files the API loads.
+They need a few extra packages:
+
+```
+pip install mwclient beautifulsoup4 requests
+cd dcapi/data/json
+```
+
+| Command | Result |
+|---|---|
+| `python characters.py` | Scrape all characters into `characters.json` |
+| `python clean.py` | Re-clean an existing `characters.json` in place |
+| `python cases.py cases.json 20` | Try the case scraper on the first 20 pages |
+| `python cases.py` | Scrape all episodes into `cases.json` |
+
+After scraping, rebuild the database (see Setup). `python -m dcapi.database`
+prints any character names in `cases.json` that were not found in
+`characters.json`.
+
+## Project layout
+
+```
+run.py                     start the server
+dcapi/main.py              FastAPI app and endpoints
+dcapi/database.py          builds the SQLite database from the JSON files
+dcapi/data/json/           characters.json, cases.json and their scrapers
+```
+
+## TODO
+
+* Remove the bundled official character images and use placeholders.
+* Fill in missing character data (`age`, `date_of_birth`, `keyhole`).
+* Culprit data for cases.
+* Cases from manga-only and movie sources.
+* Migrate from SQLite to PostgreSQL if it ever makes sense.
+* Python wrapper for this API.
+
+## Credits
+
+* Original project by [lethargilistic](https://github.com/lethargilistic/dcapi).
+* Data derived from [Detective Conan World](http://www.detectiveconanworld.com).
+  Check the wiki's license terms before redistributing the data.
+* *Detective Conan* is created by Gosho Aoyama. This is an unofficial fan project.

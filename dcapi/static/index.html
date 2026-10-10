@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detective Conan API</title>
+<style>
+  :root { --bg:#f6f7fb; --card:#fff; --text:#1b1f2a; --muted:#6b7280; --line:#e3e6ee; --accent:#c0392b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151c; --card:#1b2030; --text:#e8eaf0; --muted:#9aa3b5; --line:#2b3248; --accent:#ef6a5b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font-family: system-ui, "Segoe UI", "Noto Sans JP", sans-serif; }
+  main { max-width: 1000px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .sub a { color: var(--accent); }
+  .tabs { display:flex; gap:4px; margin-bottom:16px; border-bottom:1px solid var(--line); }
+  .tab { border:0; border-bottom:3px solid transparent; border-radius:0; background:none;
+         padding:10px 16px; color:var(--muted); font-size:1rem; }
+  .tab[aria-selected="true"] { color:var(--text); border-bottom-color:var(--accent); font-weight:600; }
+  .bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+  input, select { padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+                  background:var(--card); color:var(--text); font-size:1rem; }
+  input { flex:1; min-width:200px; }
+  .filter { display:flex; align-items:center; gap:8px; margin-bottom:12px; font-size:.95rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+  .grid.cases { grid-template-columns:1fr; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .card h2 { margin:0; font-size:1.1rem; }
+  .kanji { color:var(--muted); font-size:.95rem; margin-bottom:8px; }
+  .badge { display:inline-block; font-size:.75rem; padding:2px 8px; border-radius:99px;
+           border:1px solid var(--line); color:var(--muted); margin-right:4px; }
+  .row { font-size:.9rem; margin-top:6px; }
+  .row b { color:var(--muted); font-weight:500; }
+  .chips { margin-top:10px; display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { padding:3px 10px; font-size:.8rem; border-radius:99px; }
+  .chip small { color:var(--muted); margin-left:4px; }
+  .link { margin-top:10px; padding:4px 12px; font-size:.85rem; }
+  .pager { display:flex; align-items:center; justify-content:center; gap:12px; margin-top:20px; }
+  button { padding:8px 16px; border:1px solid var(--line); border-radius:8px; background:var(--card);
+           color:var(--text); font-size:.95rem; cursor:pointer; }
+  button:disabled { opacity:.4; cursor:default; }
+  .msg { text-align:center; color:var(--muted); padding:32px 0; }
+  [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Detective Conan <span>API</span></h1>
+  <p class="sub">真実はいつもひとつ！ &middot; <a href="/docs">API docs</a></p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-characters" role="tab" data-tab="characters">Characters</button>
+    <button class="tab" id="tab-cases" role="tab" data-tab="cases">Cases</button>
+  </div>
+
+  <div class="bar">
+    <input id="q" type="search">
+    <select id="gender">
+      <option value="">All genders</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Unknown</option>
+    </select>
+  </div>
+  <div id="filter" class="filter" hidden>
+    <span id="filter-text"></span>
+    <button id="filter-clear">&#10005; Clear</button>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="msg" class="msg"></div>
+
+  <div class="pager">
+    <button id="prev">&larr; Prev</button>
+    <span id="info"></span>
+    <button id="next">Next &rarr;</button>
+  </div>
+</main>
+
+<script>
+const LIMIT = 12;
+const state = {
+  tab: "characters",
+  offset: { characters: 0, cases: 0 },
+  q: { characters: "", cases: "" },
+  gender: "",
+  caseChar: null,   // {id, name} saat Cases difilter per karakter
+  total: 0,
+};
+let timer;
+const $ = id => document.getElementById(id);
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+function row(label, value) {
+  if (!value) return null;
+  const r = el("div", "row");
+  r.append(el("b", null, label + ": "), document.createTextNode(value));
+  return r;
+}
+
+function showCasesOf(id, name) {
+  state.caseChar = { id, name };
+  state.offset.cases = 0;
+  switchTab("cases");
+}
+
+function characterCard(c) {
+  const card = el("div", "card");
+  card.append(el("h2", null, c.name.japanese.romanized || "(unnamed)"));
+  card.append(el("div", "kanji", c.name.japanese.kanji || ""));
+
+  const badges = el("div");
+  if (c.gender) badges.append(el("span", "badge", c.gender));
+  if (c.age != null) badges.append(el("span", "badge", c.age + " yrs"));
+  badges.append(el("span", "badge", "#" + c.id));
+  card.append(badges);
+
+  const fa = c.first_appearance || {};
+  const first = fa.manga ? "Manga " + fa.manga : fa.anime ? "Anime " + fa.anime : fa.other;
+  [row("First appearance", first),
+   row("Occupation", (c.occupation || []).join(", ")),
+   row("Aliases", (c.aliases || []).join(", ")),
+   row("Voice (JP)", ((c.voice || {}).japanese || []).join(", "))
+  ].forEach(r => r && card.append(r));
+
+  const btn = el("button", "link", "Cases →");
+  btn.addEventListener("click", () => showCasesOf(c.id, c.name.japanese.romanized));
+  card.append(btn);
+  return card;
+}
+
+function caseCard(c) {
+  const card = el("div", "card");
+  const ep = c.anime_episode != null ? "Ep. " + c.anime_episode + " · " : "";
+  card.append(el("h2", null, ep + c.title));
+  card.append(el("div", "kanji", c.japanese_title || ""));
+
+  const badges = el("div");
+  if (c.manga_file) badges.append(el("span", "badge", c.manga_file));
+  if (c.airdate) badges.append(el("span", "badge", c.airdate));
+  card.append(badges);
+
+  const victims = (c.crimes || []).map(x => x.victim).filter(Boolean).join(", ");
+  const summary = c.summary && c.summary.length > 240 ? c.summary.slice(0, 240) + "…" : c.summary;
+  [row("Victims", victims), row("Summary", summary)].forEach(r => r && card.append(r));
+
+  if ((c.characters || []).length) {
+    const chips = el("div", "chips");
+    c.characters.forEach(ch => {
+      const b = el("button", "chip", ch.name);
+      if (ch.role !== "appearance") b.append(el("small", null, ch.role));
+      b.title = "Show cases with " + ch.name;
+      b.addEventListener("click", () => showCasesOf(ch.id, ch.name));
+      chips.append(b);
+    });
+    card.append(chips);
+  }
+  return card;
+}
+
+async function load() {
+  const tab = state.tab;
+  const params = new URLSearchParams({ limit: LIMIT, offset: state.offset[tab] });
+  if (state.q[tab]) params.set("q", state.q[tab]);
+  if (tab === "characters" && state.gender) params.set("gender", state.gender);
+  if (tab === "cases" && state.caseChar) params.set("character_id", state.caseChar.id);
+
+  $("msg").textContent = "Loading...";
+  try {
+    const res = await fetch("/v0/" + tab + "?" + params);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    if (tab !== state.tab) return;   // tab sudah berganti selama menunggu
+    state.total = data.total;
+    $("grid").replaceChildren(...data.results.map(tab === "cases" ? caseCard : characterCard));
+    $("msg").textContent = data.total ? "" :
+      tab === "characters" ? "No characters found." :
+      state.caseChar || state.q.cases ? "No cases found." :
+      "No cases yet. Fill in cases.json (see README) and rebuild the database.";
+    const from = data.total ? state.offset[tab] + 1 : 0;
+    $("info").textContent = from + "–" + Math.min(state.offset[tab] + LIMIT, data.total) + " of " + data.total;
+  } catch (err) {
+    $("grid").replaceChildren();
+    $("msg").textContent = "Failed to load: " + err.message;
+    state.total = 0;
+  }
+  $("prev").disabled = state.offset[tab] === 0;
+  $("next").disabled = state.offset[tab] + LIMIT >= state.total;
+}
+
+function switchTab(tab) {
+  state.tab = tab;
+  document.querySelectorAll(".tab").forEach(b =>
+    b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+  $("q").value = state.q[tab];
+  $("q").placeholder = tab === "cases"
+    ? "Search case title (e.g. roller coaster)"
+    : "Search name or alias (e.g. sherry, 灰原)";
+  $("gender").hidden = tab !== "characters";
+  $("filter").hidden = !(tab === "cases" && state.caseChar);
+  if (state.caseChar) $("filter-text").textContent = "Cases with " + state.caseChar.name;
+  $("grid").className = "grid" + (tab === "cases" ? " cases" : "");
+  load();
+}
+
+function reset() { state.offset[state.tab] = 0; load(); }
+
+document.querySelectorAll(".tab").forEach(b =>
+  b.addEventListener("click", () => switchTab(b.dataset.tab)));
+$("q").addEventListener("input", () => {
+  state.q[state.tab] = $("q").value.trim();
+  clearTimeout(timer);
+  timer = setTimeout(reset, 300);
+});
+$("gender").addEventListener("change", () => { state.gender = $("gender").value; reset(); });
+$("filter-clear").addEventListener("click", () => {
+  state.caseChar = null;
+  state.offset.cases = 0;
+  switchTab("cases");
+});
+$("prev").addEventListener("click", () => {
+  state.offset[state.tab] = Math.max(0, state.offset[state.tab] - LIMIT);
+  load(); window.scrollTo(0, 0);
+});
+$("next").addEventListener("click", () => {
+  state.offset[state.tab] += LIMIT;
+  load(); window.scrollTo(0, 0);
+});
+switchTab("characters");
+</script>
+</body>
+</html>

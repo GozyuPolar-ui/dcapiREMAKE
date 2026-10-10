@@ -1,0 +1,978 @@
+[
+  {
+    "title": "A June Bride Murder Case",
+    "japanese_title": "6月の花嫁殺人事件",
+    "anime_episode": 18,
+    "manga_file": "Volume 8: Files 8-10 (078-080)",
+    "airdate": "June 3, 1996",
+    "summary": "Sonoko and Ran take Conan to the wedding of their old middle school music teacher. When they go to check up on her, they discover that she drank a lemon punch tea that was poisoned by one of the four people she previously met. A serial killer crashed into Takasugi's mother twenty years ago.",
+    "crimes": [
+      {
+        "type": "Attempted Murder",
+        "location": "Chapel",
+        "victim": "Sayuri Matsumoto",
+        "cause_of_death": "Sodium hydroxide poisoning",
+        "suspects": "Atsushi Umemiya, Toshihiko Takasugi, Kazumi Takenaka, Kiyonaga Matsumoto, Ran Mouri, Sonoko Suzuki, and Conan Edogawa",
+        "description": "Sonoko and Ran take Conan to the wedding of their old middle school music teacher. When they go to check up on her, they discover that she drank a lemon punch tea that was poisoned by one of the four people she previously met."
+      },
+      {
+        "type": "Murder? Accident? (past)",
+        "location": "Village road",
+        "victim": "Takasugi's mother",
+        "cause_of_death": "Car carshed",
+        "suspects": "A serial killer",
+        "description": "A serial killer crashed into Takasugi's mother twenty years ago."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Sonoko Suzuki",
+        "role": "detective"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Kiyonaga Matsumoto",
+        "role": "appearance"
+      },
+      {
+        "name": "Shinichi Kudo",
+        "role": "appearance"
+      },
+      {
+        "name": "Officer Tome",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "The Haunted Mansion Murder Case",
+    "japanese_title": "幽霊屋敷殺人事件",
+    "anime_episode": 20,
+    "manga_file": "Volume 2: Files 8-10 (017-019)",
+    "airdate": "June 17, 1996",
+    "summary": "The mansion's former owner was killed five years ago, leading people to claim it is haunted. Conan is about to be killed by Akio's mother before her son shouts to stop.",
+    "crimes": [
+      {
+        "type": "Murder (Past)",
+        "location": "Mansion on 4-chōme",
+        "victim": "Akio's father",
+        "cause_of_death": "Blunt force trauma",
+        "suspects": "Unknown culprit",
+        "description": "The mansion's former owner was killed five years ago, leading people to claim it is haunted."
+      },
+      {
+        "type": "Attempted Murder",
+        "location": "Mansion on 4-chōme",
+        "victim": "Conan Edogawa",
+        "cause_of_death": "Blunt force trauma",
+        "suspects": "Akio's mother",
+        "description": "Conan is about to be killed by Akio's mother before her son shouts to stop."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Hiroshi Agasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Shinichi Kudo",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Ghost Ship Murder Case",
+    "japanese_title": "幽霊船殺人事件",
+    "anime_episode": 61,
+    "manga_file": "TV Original",
+    "airdate": "June 2, 1997 (Part 1)",
+    "summary": "While they are going to Shiki Island to investigate the case, The mayor offer drinks to Kogoro and became drunk. After he's giving a speech to the people in Shiki Island. His butt caught fire, and good thing he was saved. While he is still injured, and now he is sleeping, his butt was almost cut by a katana, he wants to catch the culprit. He saw Hamada dead and he thought he's the one who did it. When Kogoro travels to Shiki Island to give a lecture, Chief Mikami enlists his help to find a billion dollars in gold that was lost off their shores. But when someone tries to take his life, Kogoro decides to leave. However, Chief Mikami forces the detective to continue his search while the death toll rises. Are the killings the result of the Pirate's Curse, or does someone else have their sights on the gold? While Kinoshita was having private conversation with Yasuo, the latter shot Kinoshita in the arm, and then ran in the hallway, Kinoshita was found injured,and police officers found Yasuo running away. Framed for the death of his assailant, Kogoro faces a murder wrap and it's up to Conan to clear his name. But when the two prime suspects are killed themselves, Conan is back to square one. In order to solve the mystery, the young sleuth realizes that he has to go where no one else will. Into the eerie darkness of the Pirates' Cave. Goro Kinoshita attempted to kill Conan and Suzu after they had stumbled onto the body of his newest victim.",
+    "crimes": [
+      {
+        "type": "Attempted Murder",
+        "location": "Shiki Island",
+        "victim": "Kogoro Mouri",
+        "cause_of_death": "Burning",
+        "suspects": "Goro Kinoshita, Takeo Mikami, Yasuo Uehara, and Kouji Hamada",
+        "description": "While they are going to Shiki Island to investigate the case, The mayor offer drinks to Kogoro and became drunk. After he's giving a speech to the people in Shiki Island. His butt caught fire, and good thing he was saved."
+      },
+      {
+        "type": "Attempted Murder",
+        "location": "Shiki Island",
+        "victim": "Kogoro Mouri",
+        "cause_of_death": "Slash wound",
+        "suspects": "Unknown culprit",
+        "description": "While he is still injured, and now he is sleeping, his butt was almost cut by a katana, he wants to catch the culprit. He saw Hamada dead and he thought he's the one who did it."
+      },
+      {
+        "type": "Murder",
+        "location": "Shiki Island",
+        "victim": "Kouji Hamada",
+        "cause_of_death": "Throat impaled by katana",
+        "suspects": "Kogoro Mouri and Yasuo Uehara",
+        "description": "When Kogoro travels to Shiki Island to give a lecture, Chief Mikami enlists his help to find a billion dollars in gold that was lost off their shores. But when someone tries to take his life, Kogoro decides to leave. However, Chief Mikami forces the detective to continue his search while the death toll rises. Are the killings the result of the Pirate's Curse, or does someone else have their sights on the gold?"
+      },
+      {
+        "type": "Attempted Murder",
+        "location": "Mayor's office in Shiki Island",
+        "victim": "Goro Kinoshita",
+        "cause_of_death": "Gunshot wound in left arm",
+        "suspects": "Yasuo Uehara",
+        "description": "While Kinoshita was having private conversation with Yasuo, the latter shot Kinoshita in the arm, and then ran in the hallway, Kinoshita was found injured,and police officers found Yasuo running away."
+      },
+      {
+        "type": "Suicide?",
+        "location": "Shiki Island",
+        "victim": "Yasuo Uehara",
+        "cause_of_death": "Gunshot wound in right temple (deep wound)",
+        "suspects": "Goro Kinoshita",
+        "description": "Framed for the death of his assailant, Kogoro faces a murder wrap and it's up to Conan to clear his name. But when the two prime suspects are killed themselves, Conan is back to square one. In order to solve the mystery, the young sleuth realizes that he has to go where no one else will. Into the eerie darkness of the Pirates' Cave."
+      },
+      {
+        "type": "Attempted Murder",
+        "location": "Shiki Island",
+        "victim": "Conan Edogawa and Suzu Mikami",
+        "cause_of_death": "Shooting",
+        "suspects": "Goro Kinoshita",
+        "description": "Goro Kinoshita attempted to kill Conan and Suzu after they had stumbled onto the body of his newest victim."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri (via Conan",
+        "role": "detective"
+      },
+      {
+        "name": "1st murder)\nConan Edogawa",
+        "role": "detective"
+      }
+    ]
+  },
+  {
+    "title": "A Crab and Whale Kidnapping Case",
+    "japanese_title": "カニとクジラ誘拐事件",
+    "anime_episode": 65,
+    "manga_file": "TV Original",
+    "airdate": "June 30, 1997",
+    "summary": "Keita, son of Keigo Endo, has been kidnapped from the front yard of his house leaving a note behind that says \"We have your child. If you notify the police, we will kill him. Wait for us to contact you\". Two kidnappers are prepare to escape from hotel, but Conan gets strike them.",
+    "crimes": [
+      {
+        "type": "Kidnapping",
+        "location": "Endo household",
+        "victim": "Keita Endo",
+        "cause_of_death": null,
+        "suspects": "Unknown kidnapper",
+        "description": "Keita, son of Keigo Endo, has been kidnapped from the front yard of his house leaving a note behind that says \"We have your child. If you notify the police, we will kill him. Wait for us to contact you\"."
+      },
+      {
+        "type": "Hostage Situation",
+        "location": "Unknown Hotel",
+        "victim": "Keita Endo",
+        "cause_of_death": null,
+        "suspects": "Two kidnappers",
+        "description": "Two kidnappers are prepare to escape from hotel, but Conan gets strike them."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Kamen Yaiba",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Honey Cocktail Murder Case",
+    "japanese_title": "ハニーカクテル殺人事件",
+    "anime_episode": 120,
+    "manga_file": "TV Original",
+    "airdate": "October 19, 1998",
+    "summary": null,
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Below of Yamazaki household",
+        "victim": "Hiromi Yamazaki",
+        "cause_of_death": "Blunt trauma to head after falling",
+        "suspects": "Shingo Aihara, Hachibe Hachimaki, and Eri Nakamura",
+        "description": null
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Dangerous Recipe",
+    "japanese_title": "危険なレシピ",
+    "anime_episode": 183,
+    "manga_file": "TV Original",
+    "airdate": "March 6, 2000",
+    "summary": "In the night time, Murakami trap the two palpirids to kill the neighbor's German Shepherd in house, but Conan founded. Murakami decide to use his baton to attack the Detective Boys after he's surrounded by many of his neighbours, but get knocked out by Conan's Power-Enhancing Kick Shoes.",
+    "crimes": [
+      {
+        "type": "Attemped Murder",
+        "location": "Neighbor's house",
+        "victim": "neighbor's dog",
+        "cause_of_death": "Mole bait poison",
+        "suspects": "Yasuo Murakami",
+        "description": "In the night time, Murakami trap the two palpirids to kill the neighbor's German Shepherd in house, but Conan founded."
+      },
+      {
+        "type": "Attemped Murder",
+        "location": "Near Neighbor's house",
+        "victim": "Detective Boys",
+        "cause_of_death": "Beating to death with baton",
+        "suspects": "Yasuo Murakami",
+        "description": "Murakami decide to use his baton to attack the Detective Boys after he's surrounded by many of his neighbours, but get knocked out by Conan's Power-Enhancing Kick Shoes."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Kaitou Kid",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Cursed Mask Coldly Laughs",
+    "japanese_title": "呪いの仮面は冷たく笑う",
+    "anime_episode": 184,
+    "manga_file": "TV Original",
+    "airdate": "March 13, 2000 *",
+    "summary": "In the middle of the night, Beniko Suou is stabbed in her bed, despite the fact that the door was locked. The 200 masks scattered around the room like they're laughing. Is this the curse of the masks!?",
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Suou household",
+        "victim": "Beniko Suou",
+        "cause_of_death": "Stab wound on the neck",
+        "suspects": "Masanori Katagiri, Mamoru Matsudaira, Haruka Nagara, Honami Shimogasa, Minaho Shimogasa, Kazuyo Inaba, and Touya Aikawa",
+        "description": "In the middle of the night, Beniko Suou is stabbed in her bed, despite the fact that the door was locked. The 200 masks scattered around the room like they're laughing. Is this the curse of the masks!?"
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Wataru Takagi",
+        "role": "appearance"
+      },
+      {
+        "name": "Officer Tome",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Kobayashi",
+        "role": "appearance"
+      },
+      {
+        "name": "Honami Shimogasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Minaho Shimogasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Female forensics member",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Friendship That Can't Be Bought",
+    "japanese_title": "お金で買えない友情",
+    "anime_episode": 329,
+    "manga_file": "Volume 39: Files 6-8 (398-400)",
+    "airdate": "July 28, 2003 (Part 1)",
+    "summary": "Shirafuji seems to have lost control of her bike and rode over a cliff",
+    "crimes": [
+      {
+        "type": "Accident?",
+        "location": "Mountains",
+        "victim": "Yasumi Shirafuji",
+        "cause_of_death": "Blunt-force trauma",
+        "suspects": "Reiji Fukuura, Haruka Tendo, and Takuto Meshiai",
+        "description": "Shirafuji seems to have lost control of her bike and rode over a cliff"
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Ai Haibara",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Hiroshi Agasa",
+        "role": "detective"
+      },
+      {
+        "name": "Suguru Itakura",
+        "role": "appearance"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Wataru Takagi",
+        "role": "appearance"
+      },
+      {
+        "name": "Shinichi Kudo",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Sonoko Suzuki",
+        "role": "appearance"
+      },
+      {
+        "name": "Yoko Okino",
+        "role": "appearance"
+      },
+      {
+        "name": "Vermouth",
+        "role": "appearance"
+      },
+      {
+        "name": "Elena Miyano",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Course Without Protest",
+    "japanese_title": "物言わぬ航路",
+    "anime_episode": 371,
+    "manga_file": "Volume 45: Files 6-8 (463-465)",
+    "airdate": "August 23, 2004 (Part 1)",
+    "summary": null,
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Okinawa, Naha City",
+        "victim": "Toshizo Nose",
+        "cause_of_death": "Stab wound",
+        "suspects": "Masaharu Motoyama",
+        "description": null
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Vermouth",
+        "role": "appearance"
+      },
+      {
+        "name": "Eri Kisaki",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Code of Stars and Tobacco",
+    "japanese_title": "星とタバコのコード",
+    "anime_episode": 374,
+    "manga_file": "Volume 45: File 9 (466) ~ Volume 46: File 1 (469)",
+    "airdate": "October 18, 2004 (Part 1)",
+    "summary": "The first victim was killed one year before the appearance of Professor Agasa and the Detective Boys. He was pushed from a cliff near Amatsuchi Pension by someone and fell down the ground below, killing him. The second victim was killed in the same way as the first victim, but this time he was struck by something like a steel pipe. Then he was dropped to the ground, breaking his neck bone and killing him. He decided to kill everyone, but is stopped by Conan.",
+    "crimes": [
+      {
+        "type": "Murder (Past)",
+        "location": "Amatsuchi Pension",
+        "victim": "Asao Kono",
+        "cause_of_death": "Fell from the cliff",
+        "suspects": "Etsuko Nonomiya, Ryoji Amatsuchi, Hajime Futagawa, and Heihachi Mikami",
+        "description": "The first victim was killed one year before the appearance of Professor Agasa and the Detective Boys. He was pushed from a cliff near Amatsuchi Pension by someone and fell down the ground below, killing him."
+      },
+      {
+        "type": "Murder",
+        "location": "Amatsuchi Pension",
+        "victim": "Hajime Futagawa",
+        "cause_of_death": "Fell from the cliff",
+        "suspects": "Etsuko Nonomiya, Ryoji Amatsuchi, and Heihachi Mikami",
+        "description": "The second victim was killed in the same way as the first victim, but this time he was struck by something like a steel pipe. Then he was dropped to the ground, breaking his neck bone and killing him."
+      },
+      {
+        "type": "Attempted Murder",
+        "location": "Inn",
+        "victim": "Etsuko Ninomiya, Ryoji Amatsuchi, Conan Edogawa, Ai Haibara, Ayumi Yoshida, Genta Kojima, Mitsuhiko Tsuburaya, and Professor Agasa",
+        "cause_of_death": "Shooting",
+        "suspects": "Heihachi Mikami",
+        "description": "He decided to kill everyone, but is stopped by Conan."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Ai Haibara",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Hiroshi Agasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Misao Yamamura",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Jewel Thief Caught Red-Handed",
+    "japanese_title": "宝石強盗現行犯",
+    "anime_episode": 401,
+    "manga_file": "Volume 47: Files 5-7 (484-486)",
+    "airdate": "June 6, 2005 (Part 1)",
+    "summary": "As Takagi wanted to buy a brooch for Sato, someone went inside the jewelry and robbed its content including the brooch prompting him to chase the robber. The robber of jewelry store was found dead during the escaping. Is this an accident or suicide?",
+    "crimes": [
+      {
+        "type": "Robbery",
+        "location": "Takanasi jewelry",
+        "victim": "Jewelry employees and Wataru Takagi",
+        "cause_of_death": "Jewels",
+        "suspects": "Atomura and Sakanobu Nekota",
+        "description": "As Takagi wanted to buy a brooch for Sato, someone went inside the jewelry and robbed its content including the brooch prompting him to chase the robber."
+      },
+      {
+        "type": "Accident? or Suicide?",
+        "location": "On top of the truck",
+        "victim": "Atomura",
+        "cause_of_death": "Free-falling",
+        "suspects": "Sakanobu Nekota",
+        "description": "The robber of jewelry store was found dead during the escaping. Is this an accident or suicide?"
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Wataru Takagi",
+        "role": "appearance"
+      },
+      {
+        "name": "Ai Haibara",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Miwako Sato",
+        "role": "appearance"
+      },
+      {
+        "name": "Ninzaburo Shiratori",
+        "role": "appearance"
+      },
+      {
+        "name": "Yumi Miyamoto",
+        "role": "appearance"
+      },
+      {
+        "name": "Officer Numata",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Shinichi Kudo",
+        "role": "appearance"
+      },
+      {
+        "name": "Kamen Yaiba",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Fool's Inheritance",
+    "japanese_title": "愚か者への遺産",
+    "anime_episode": 539,
+    "manga_file": "TV Original",
+    "airdate": "July 4, 2009",
+    "summary": "The victim dead from the Winchester Model 37A Single Barreled Shotgun.",
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Hisaemon Yaguchi's house",
+        "victim": "Hisaemon Yaguchi",
+        "cause_of_death": "Gunshot wound on Chest",
+        "suspects": "Rokuro Yaguchi, Akihiko Yaguchi, and Kimio Yaguchi",
+        "description": "The victim dead from the Winchester Model 37A Single Barreled Shotgun."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Jugo Yokomizo",
+        "role": "appearance"
+      },
+      {
+        "name": "Police detective",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Dangerous Party of Two",
+    "japanese_title": "危険な二人連れ",
+    "anime_episode": 557,
+    "manga_file": "Volume 65: Files 6-7 (680-681)",
+    "airdate": "November 28, 2009",
+    "summary": "Agasa's car break down while going back to Tokyo. After getting off on the nearest bus stop. He realized he lost his wallet, thus he can't get into a bus as he has no money. A passing car decided to reach out to Agasa and Haibara. Asking if they want to hop in. Coincidentally, the car is also going to Tokyo, specifically the Mouri Detective Agency in Beika Haibara noticed there are three hole likely created by bullets. She also found there are some trace of blood left after the owner of the car clean off the back seat. The moment the arrasted men is inside the car, he pull out a gun he had hid and start shooting. Both Uehara and Yamoto tried to subdued him, and as a result, got injured on the eyes and on the head respectively. This also resulted in the back seat of the car having bullet holes, and there are leftover blood even after cleaning up.",
+    "crimes": [
+      {
+        "type": "Stranded",
+        "location": "Somewhere in the Yamanashi prefecture",
+        "victim": null,
+        "cause_of_death": null,
+        "suspects": null,
+        "description": "Agasa's car break down while going back to Tokyo. After getting off on the nearest bus stop. He realized he lost his wallet, thus he can't get into a bus as he has no money."
+      },
+      {
+        "type": "Hitchhiking",
+        "location": "A bus stop in the Yamanashi prefecture",
+        "victim": null,
+        "cause_of_death": null,
+        "suspects": null,
+        "description": "A passing car decided to reach out to Agasa and Haibara. Asking if they want to hop in. Coincidentally, the car is also going to Tokyo, specifically the Mouri Detective Agency in Beika"
+      },
+      {
+        "type": "Gunshot",
+        "location": "On the back seat of the passing car to Tokyo",
+        "victim": null,
+        "cause_of_death": "Presumably a gun",
+        "suspects": "The driver and the passenger of the car",
+        "description": "Haibara noticed there are three hole likely created by bullets. She also found there are some trace of blood left after the owner of the car clean off the back seat."
+      },
+      {
+        "type": "Attempting assault (Past)",
+        "location": "Inside Yui Uehara and Kansuke Yamoto's car",
+        "victim": "Yui Uehara, Kansuke Yamoto",
+        "cause_of_death": null,
+        "suspects": "An arrasted man",
+        "description": "The moment the arrasted men is inside the car, he pull out a gun he had hid and start shooting. Both Uehara and Yamoto tried to subdued him, and as a result, got injured on the eyes and on the head respectively. This also resulted in the back seat of the car having bullet holes, and there are leftover blood even after cleaning up."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Ai Haibara",
+        "role": "appearance"
+      },
+      {
+        "name": "Professor Agasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Kansuke Yamato",
+        "role": "appearance"
+      },
+      {
+        "name": "Yui Uehara",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Subaru Okiya",
+        "role": "appearance"
+      },
+      {
+        "name": "Gin",
+        "role": "appearance"
+      },
+      {
+        "name": "Vodka",
+        "role": "appearance"
+      },
+      {
+        "name": "Vermouth",
+        "role": "appearance"
+      },
+      {
+        "name": "Shinichi Kudo",
+        "role": "appearance"
+      },
+      {
+        "name": "Shiho Miyano",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Friend of Justice",
+    "japanese_title": "セイギノミカタ",
+    "anime_episode": 599,
+    "manga_file": "TV Original",
+    "airdate": "December 11, 2010",
+    "summary": "Maeda pickpocketed the businessman but got arrested by Tokuma Norizuki.",
+    "crimes": [
+      {
+        "type": "Pickpocket",
+        "location": "Inside train",
+        "victim": "Businessman",
+        "cause_of_death": null,
+        "suspects": "Kousuke Maeda",
+        "description": "Maeda pickpocketed the businessman but got arrested by Tokuma Norizuki."
+      },
+      {
+        "type": "Murder",
+        "location": "Near the Sugame station",
+        "victim": "Tsuneo Kanemura",
+        "cause_of_death": "Blow to the head",
+        "suspects": "Teruhiko Kiriya",
+        "description": null
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Wataru Takagi",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Car Carrying a Time Bomb",
+    "japanese_title": "時限爆弾を乗せた車",
+    "anime_episode": 686,
+    "manga_file": "TV Original",
+    "airdate": "February 9, 2013",
+    "summary": "Tonomura survived from the bombing incident, but he's in critical condition. Saeki survived from the bombing incident, but he's in critical condition. The bomb wasn't delivered to Kaneko and Takagi confirms that he's safe. The bomb was planned to explode in the next few minutes but the team successfully threw it into the Sumida river before.",
+    "crimes": [
+      {
+        "type": "Bombing - Attempted Murder",
+        "location": "Tonomura's house",
+        "victim": "Kouzou Tonomura",
+        "cause_of_death": "Explosion",
+        "suspects": "Masato Utsugi",
+        "description": "Tonomura survived from the bombing incident, but he's in critical condition."
+      },
+      {
+        "type": "Bombing - Attempted Murder",
+        "location": "Apartment",
+        "victim": "Kazuhiko Saeki",
+        "cause_of_death": "Explosion",
+        "suspects": "Masato Utsugi",
+        "description": "Saeki survived from the bombing incident, but he's in critical condition."
+      },
+      {
+        "type": "Attempted Bombing",
+        "location": "Kaneko's house",
+        "victim": "Shigekichi Kaneko",
+        "cause_of_death": null,
+        "suspects": "Masato Utsugi",
+        "description": "The bomb wasn't delivered to Kaneko and Takagi confirms that he's safe."
+      },
+      {
+        "type": "Attempted Bombing",
+        "location": "Bridge",
+        "victim": "Masato Utsugi, Kingo Ebisawa, Candy, and Conan Edogawa",
+        "cause_of_death": null,
+        "suspects": "Masato Utsugi and Kingo Ebisawa",
+        "description": "The bomb was planned to explode in the next few minutes but the team successfully threw it into the Sumida river before."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "detective"
+      },
+      {
+        "name": "Ai Haibara",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Boys",
+        "role": "appearance"
+      },
+      {
+        "name": "Kazunobu Chiba",
+        "role": "appearance"
+      },
+      {
+        "name": "Wataru Takagi",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Hiroshi Agasa",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Horita",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Saitoh",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Sogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Hirota",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Kawanaka",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Okumura",
+        "role": "appearance"
+      },
+      {
+        "name": "Detective Takikawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Unnamed officer",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Dispute Over a Platinum Ticket",
+    "japanese_title": "プラチナチケット騒動記",
+    "anime_episode": 719,
+    "manga_file": "TV Original",
+    "airdate": "November 23, 2013",
+    "summary": "Conan, Ran, Sonoko, the workers from Marin Coffee, and Haruka Kona look for the missing Masako at her apartment to ask her about the platinum ticket online auction only to find her dead on her apartment floor.",
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Masako Mooka's apartment",
+        "victim": "Masako Mooka",
+        "cause_of_death": "Blunt force trauma from hitting her head on the corner of the table",
+        "suspects": "Kaori Kosuda, Jiro Kirima, Haruka Kona, and Ten Uruma",
+        "description": "Conan, Ran, Sonoko, the workers from Marin Coffee, and Haruka Kona look for the missing Masako at her apartment to ask her about the platinum ticket online auction only to find her dead on her apartment floor."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Sonoko Suzuki",
+        "role": "detective"
+      },
+      {
+        "name": "Juzo Megure",
+        "role": "appearance"
+      },
+      {
+        "name": "Miwako Sato",
+        "role": "appearance"
+      }
+    ]
+  },
+  {
+    "title": "A Happy E-mail Brings Sadness",
+    "japanese_title": "メールは不幸を呼ぶ",
+    "anime_episode": 726,
+    "manga_file": "TV Original",
+    "airdate": "January 18, 2014",
+    "summary": "Nana left behind a dying message that resembles the top part of the kanji for \"left\" (左) or \"right\" (右).",
+    "crimes": [
+      {
+        "type": "Murder",
+        "location": "Park",
+        "victim": "Nana Hirose",
+        "cause_of_death": "Strangulation by Rope",
+        "suspects": "Osamu Samon and Toshihiko Migita",
+        "description": "Nana left behind a dying message that resembles the top part of the kanji for \"left\" (左) or \"right\" (右)."
+      }
+    ],
+    "characters": [
+      {
+        "name": "Conan Edogawa",
+        "role": "appearance"
+      },
+      {
+        "name": "Ran Mouri",
+        "role": "appearance"
+      },
+      {
+        "name": "Kogoro Mouri",
+        "role": "detective"
+      },
+      {
+        "name": "Misao Yamamura",
+        "role": "appearance"
+      }
+    ]
+  }
+]
